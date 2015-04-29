@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form method="post" name="222" enctype="multipart/form-data" action="doAction.php">
+			<input type="file" id="fileElem" multiple="multiple" accept="image/*" onchange="handleFiles(this)">
+			<div id="fileList" style="width:200px;"name="111"></div>
+			<input type="button" id="submit" />
+		</form>
+		<script src="js/jquery.min.js"></script>
+	<script>
+		window.URL = window.URL || window.webkitURL;
+		var fileElem = document.getElementById("fileElem"),
+		    fileList = document.getElementById("fileList"),
+		    fileFilter=[],//过滤后文件数组
+		    filter= function(files) {
+				var arrFiles = [];
+				for (var i = 0, file; file = files[i]; i++) {
+					if (file.type.indexOf("image") == 0) {
+						if (file.size >= 512000) {
+							alert('您这张"'+ file.name +'"图片大小过大，应小于500k');	
+						} else {
+							arrFiles.push(file);	
+						}			
+					} else {
+						alert('文件"' + file.name + '"不是图片。');	
+					}
+				}
+				return arrFiles;
+			};//过滤函数
+		function handleFiles(obj) {
+			var files = obj.files;
+			fileFilter=fileFilter.concat(filter(files));
+			url="doAction.php";
+			if(window.URL){
+				//File API
+				//循环
+				for($i=0;$i<files.length;$i++){
+ 				  var img = new Image();
+			      img.src = window.URL.createObjectURL(files[$i]); //创建一个object URL，并不是你的本地路径
+			      img.width = 200;
+			      img.onload = function(e) {
+			         window.URL.revokeObjectURL(this.src); //图片加载后，释放object URL
+			      }
+			      fileList.appendChild(img);
+				}
+			
+				  //alert(files[0].name + "," + files[0].size + " bytes");
+			}else if(window.FileReader){
+				//opera不支持createObjectURL/revokeObjectURL方法。我们用FileReader对象来处理
+				var reader = new FileReader();
+				reader.readAsDataURL(files[0]);
+				reader.onload = function(e){
+					alert(files[0].name + "," +e.total + " bytes");
+					img.src = this.result;
+					img.width = 200;
+					fileList.appendChild(img);
+				}
+			}else{
+				//ie
+				obj.select();
+				obj.blur();
+				var nfile = document.selection.createRange().text;
+				document.selection.empty();
+				img.src = nfile;
+				img.width = 200;
+				img.onload=function(){
+			      alert(nfile+","+img.fileSize + " bytes");
+			    }
+				fileList.appendChild(img);
+				//fileList.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='image',src='"+nfile+"')";
+			}
+		}
+		
+		var upload = document.getElementById("submit");
+		upload.addEventListener("click",function(e){
+			funUploadFile(e);
+		},false);
+		
+		//文件上传
+	function funUploadFile() {
+		var self = this;	
+		if (location.host.indexOf("sitepointstatic") >= 0) {
+			//非站点服务器上运行
+			return;	
+		}
+		for (var i = 0, file; file = fileFilter[i]; i++) {
+			(function(file) {
+				var xhr = new XMLHttpRequest();
+				if (xhr.upload) {
+					// 上传中
+//					xhr.upload.addEventListener("progress", function(e) {
+//						self.onProgress(file, e.loaded, e.total);
+//					}, false);
+		
+					// 文件上传成功或是失败
+					xhr.onreadystatechange = function(e) {
+						if (xhr.readyState == 4) {
+							if (xhr.status == 200) {
+//								self.onSuccess(file, xhr.responseText);
+//								self.funDeleteFile(file);
+								if (!self.fileFilter.length) {
+									//全部完毕
+//									self.onComplete();	
+								}
+							} else {
+//								self.onFailure(file, xhr.responseText);		
+							}
+						}
+					};
+				
+					// 开始上传
+					xhr.open("POST", self.url, true);
+					xhr.setRequestHeader("X_FILENAME", file.name);
+					xhr.send(file);
+				}	
+			})(file);	
+		}	
+			
+	}
+	</script>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+*{margin: 0px;border: 0px;padding: 0px;
+	font-size: 14px;
+	text-decoration: none;
+	list-style: none;
+	font-family: microsoft yahei;
+}
+.header{
+	width: 960px;
+	margin: 0 auto;
+	height: 100px;
+}
+.pic,.intro,.notes{
+	width: 960px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.name{
+	float: left;
+	font-size: 32px;
+	line-height: 100px;
+}
+.welcome{
+	float: right;
+	font-size: 40px;
+	line-height: 100px;
+}
+.intro{
+	margin-top: 10px;
+}
+.intro p{
+	font-size: 20px;
+	margin-top: 10px;
+	text-align: center;
+}
+.notes{
+	margin-top: 40px;
+	width: 400px;
+}
+.submit{
+	margin-left: 20px;
+}
+.notes input{
+	margin-left: 20px;
+	height: 31px;
+	line-height: 31px;
+	border-color: #a85c29;
+	border-style: solid;
+	border-width: 1px;
+	width: 200px;
+
+}
+.text{
+	margin-top: 10px;
+}

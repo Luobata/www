@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style>
+		*{
+			padding: 0px;
+			margin: 0px;
+			
+		}
+		.header{
+			position: relative;
+			width: 100%;
+			height: 80px;
+		}
+		.left , .right{
+		}
+		.left{
+			position: absolute;
+			width: 200px;
+			height: 80px;
+			background-color: orangered;
+		}
+		.right{
+			height: 80px;
+			width: 100%;
+			background-color: royalblue;
+		}
+		
+		.left2{
+			width: 200px;
+			height: 80px;
+			float: left;
+			background-color: orangered;
+		}		
+		.right2{
+			height: 80px;
+			background-color: royalblue;
+		}
+		
+	</style>	
+	<body>
+		<div class="header">
+			<div class="left">left</div>
+			<div class="right">right</div>
+		</div>
+		<div class="header">
+			<div class="left2">left</div>
+			<div class="right2">
+				<div class="nav">
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</div>
+				<div class="nav2">
+					<ul>
+						<li>4</li>
+						<li>5</li>
+						<li>6</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script>
+			　　　　var name = "The Window";   
+　　var object = {  
+　　　　name : "My Object",  
+　　　　getNameFunc : function(){  
+　　　　　　return function(){  
+　　　　　　　　return this.name;  
+　　　　　};   
+　　　　}   
+};  
+alert(object.getNameFunc()());  //The Window
+		</script>
+	</body>
+</html>

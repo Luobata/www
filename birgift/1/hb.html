@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	    <meta charset="UTF-8" />
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=0, minimum-scale=1.0,maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<link rel="stylesheet" type="text/css" href="css/hb.css" />
+
+    <style type="text/css">
+        .progress{width: 282px; margin-top:auto;margin-right:auto;height: 8px; background-color: #CCC; position: relative;top:151px;left:20px;}
+        .progress .ibar {width: 0px; height: 8px; background-color: #ffcc00; position: absolute;}
+       
+    </style>
+
+<script type="text/javascript" charset="utf-8" src="js/jquery-1.10.2.js"></script> 
+
+
+<script type="text/javascript"> 
+
+
+$(document).ready(function(){
+    var num;
+    
+    num=Math.random()*(400-250)+250;
+    num=Math.floor(num);
+      
+
+    $(".hb-btn").bind("click",function(){
+      $(".hb-btn").hide();
+     $(".num").append(num);
+    })
+
+ })
+
+</script> 
+
+</head>
+
+<body>
+ 
+<div class="content">
+  
+  <div class="hb">
+         <p class="num"></p>
+         <img class="hb-btn" src="img/hb-btn.png" /> 
+  </div>
+
+</div>
+
+
+
+
+
+  <script type="text/javascript" src="js/fx.js"></script> 
+</body>
+</html>

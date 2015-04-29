@@ -1,0 +1,77 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	
+}
+body{
+	background-color: #BED;
+}
+.ui-accordion-header{
+	height: 144px;
+}
+.h-content{
+	width: 1400px;
+	height: 144px;
+	margin: 0 auto;
+}
+.logo{
+	float: left;
+	width: 200px;
+	line-height: 144px;
+}
+.coontent{
+	width: 1170px;
+	/*overflow: hidden;*/
+	padding-top:50px;
+	margin: 10px auto;
+}
+.c-left,.c-right{
+	/*overflow: hidden;*/
+	float: left;
+	background-color: #DFE;
+	padding: 10px;
+}
+.c-right{
+	float: right;
+}
+.c-cencter,.cd{
+	margin: 10px auto;
+	width:380px;
+	padding: 10px;
+	background-color: #DFE;
+}
+.cd{
+	overflow: hidden;
+	margin-top: 0px;
+	width: 380px;
+
+}
+.cd .radio{
+	float: left;
+	margin-right: 16px;
+	padding-left: 17px;
+}
+.poke-info{
+	width: 500px;
+	overflow: hidden;
+	height: 1000px;
+}
+
+input{
+	width: 3em;
+}
+table{
+	border-spacing: 3px;
+	border-collapse: separate;
+}
+.info td{
+	/*width: 70px;*/
+}
+.result_def,.result_att table{
+	font-weight: bold;
+}
+.col-md-6{
+	width: 100%;
+}

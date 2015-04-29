@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jquery图片弹幕插件----Luobata出品</title>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css">
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<img src="../../img/1.jpg">
+
+		<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	</body>
+</html>

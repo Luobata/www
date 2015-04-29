@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="../jquery-imgslide/css/jquery.imgslide.css" />
+	</head>
+	<body>
+		<div class="weiduduan clearfix">
+		<div class="scroll">
+			<div class="scrollDesc">
+			<ul>
+			  <li>
+			  	<a  target="_blank">
+			  		<img  src="img/1.png"/>
+			  	</a>
+			  </li>
+			  <li>
+			  	<a  target="_blank">
+			  		<img  src="img/2.png" />
+			  	</a>
+			  </li>
+			  <li>
+			  	<a  target="_blank">
+			  		<img  src="img/3.png" />
+			  	</a>
+			  </li>
+			</ul>
+			</div>
+			<div class="scrollBar">
+				<ul>
+					<li class="current">1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</div>
+		</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.imgslide.js"></script>
+		<script>
+			$(function(){
+				$('.scroll').imgslide();
+			});
+		</script>
+	</body>
+</html>

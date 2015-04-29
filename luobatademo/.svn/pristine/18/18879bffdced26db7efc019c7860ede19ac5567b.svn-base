@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<RepositoryCustomSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <LastUsedView>Log</LastUsedView>
+  <AutoRefresh>true</AutoRefresh>
+  <DraftCommitMsg />
+  <LogBranchFilterIndex>0</LogBranchFilterIndex>
+  <SidebarExpandedItems>
+    <string>文件状态</string>
+    <string>分支</string>
+    <string>远程</string>
+  </SidebarExpandedItems>
+  <SidebarWidth>140</SidebarWidth>
+  <AutoRefreshRemotes>true</AutoRefreshRemotes>
+  <LastCheckedRemotes>2015-03-04T22:24:15.454973+08:00</LastCheckedRemotes>
+  <RemoteProjectLinks>
+    <RepositoryRemoteProjectLink>
+      <Type>GitHub</Type>
+      <BaseUrl>https://www.github.com</BaseUrl>
+      <RemoteName>个人github</RemoteName>
+      <Username>Luobata</Username>
+      <Identifier>Luobata/jQuery.ImgSlide</Identifier>
+    </RepositoryRemoteProjectLink>
+  </RemoteProjectLinks>
+  <SubtreeLinks />
+  <IncomingSavedCount>0</IncomingSavedCount>
+  <OutgoingSavedCount>0</OutgoingSavedCount>
+</RepositoryCustomSettings>

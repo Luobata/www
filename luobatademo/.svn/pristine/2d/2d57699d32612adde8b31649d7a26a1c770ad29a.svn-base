@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>提前特定元素html,css</title>
+		<link rel="stylesheet" type="text/css" href="./../css/reset.css">
+		<style type="text/css">
+			.page{
+				width: 1000px;
+				height: 500px;
+				margin: 20px auto;
+			}
+			/*.button{
+				width: 200px;
+				height: 100px;
+				background-color: #EC4646;
+				border-radius: 10px;
+			}*/
+			.bu{
+				width: 100px;
+				height: 50px;
+				background-color: #C7A6A6;
+				border-radius: 100px;
+			}
+
+		</style>
+		<body>
+			<div class="page">
+				<a href="#" class="button button-purple"><span>Button</span></a>
+				<div class="button">
+					<div class="bu">
+						
+					</div>
+				</div>
+				<div class="output">
+					
+				</div>
+			</div>	
+
+		<script type="text/javascript" src="./../js/jquery.min.js"></script>
+		<script type="text/javascript">
+			;(function($){
+				$.getHtml = function(el){
+					var self = this;
+					var element = $(el);
+
+					var html = element.html();
+
+					$('.output').text(html);
+				}
+
+				$.fn.getHtml = function(){
+					var self = this;
+					return self.each(function(index, el) {
+						return $.getHtml(el);
+					});
+				}
+			})(jQuery);
+			$(function() { 
+			   //绑定元素事件
+			   $(".page").getHtml(); 
+			});
+		</script>
+		</body>
+	</head>
+</html>

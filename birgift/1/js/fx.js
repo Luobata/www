@@ -1,0 +1,32 @@
+ 
+    (function() {
+    function i() {
+        WeixinJSBridge.on("menu:share:appmessage", s), WeixinJSBridge.on("menu:share:timeline", o)
+    }
+    function s() {
+        WeixinJSBridge.invoke("sendAppMessage", {
+            //appid: "wxaf1d4daa8e0ec0b5",
+            img_url: t,
+            img_width: "150",
+            img_height: "150",
+            link: e,
+            desc: n,
+            title: r
+        }, function(e) {})
+    }
+    function o() {
+        WeixinJSBridge.invoke("shareTimeline", {
+            img_url: t,
+            img_width: "150",
+            img_height: "150",
+            link: e,
+            desc: n,
+            title: n
+        }, function(e) {})
+    }
+    var e = "http://1.birgift.sinaapp.com/0.html",
+        t = "http://1.birgift.sinaapp.com/img/fx.jpg",
+        n = "来自horizon的礼物",
+        r = "Happy birthday & Merry Christmas";
+    typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function" ? i() : document.addEventListener ? document.addEventListener("WeixinJSBridgeReady", i, !1) : document.attachEvent && (document.attachEvent("WeixinJSBridgeReady", i), document.attachEvent("onWeixinJSBridgeReady", i))
+})()

@@ -1,0 +1,185 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <!--<embed src="http://2.lenovoschool.sinaapp.com/bg.mp3" id="bg-m" hidden="true" autostart="true" loop="true" style="position: absolute;"></embed>-->
+    
+    
+
+	<title></title>
+    <link type="text/css" rel="stylesheet" href="scripts/index.css" />
+
+</head>
+<body>
+	<audio id="bg-m" src="bg.mp3"   type="audio/mp3"  autoplay="autoplay" loop="loop" style="position: absolute;"></audio>
+	<!--<video id="bg-m" src="http://2.lenovoschool.sinaapp.com/bg.mp3" autoplay="autoplay" ></video>-->
+	<div class="loading_bg" id="loading">
+    	<div class="loading_wrp">
+            <div class="loading">
+                <div class="loading_bar"></div>
+            </div>
+            <b id="loading_text">0%</b>
+        </div>
+    </div>
+    <div class="lock_wrp" id="lock">
+        <div class="lock">
+            <i></i><br />
+            为了更好的体验，请使用竖屏浏览
+        </div>
+    </div>
+      <div class="m-console">
+             <img class="m-btn" id="play-btn" src="images/play.png" style="display: none;"></img>
+             <img class="m-btn" id="pause-btn"src="images/stop.png" ></img>
+       </div>
+	<div class="wrapper">
+      
+    	<section class="sec0">
+        	<h1>封面</h1>
+            <div class="logo"></div>
+        </section>
+        <section class="sec1"><div class="h_wrp">
+        	<div class="text">
+        		<p style="color:#886354">静夜</p>
+                <p style="color:#886354">开始聆听万物</p>
+        	</div>
+            <i class="up"></i>
+        	
+        </div></section>
+        
+        
+		<section class="sec_desc">
+			<div class="h_wrp">
+				<div class="text">
+					<p style="color:#412626">不敢用很重的语言</p>
+				</div>
+			 <i class="up"></i>
+        	</div>
+		</section>
+		<section class="sec_desc2">
+        	<div class="h_wrp">
+        		<div class="text">
+					<p style="color:#5F3B3B">让自己害怕</p>
+				</div>
+            <i class="up"></i>
+        	</div>
+        </section>
+        <section class="sec_desc3">
+        	<div class="h_wrp">
+        		<div class="text">
+					<p style="color:#412626">淡出</p>
+					<p style="color:#412626">心里的情感重的</p>
+	
+				</div>
+            <i class="up"></i>
+        	</div>
+        </section>
+        <section class="sec_desc4">
+        	<div class="h_wrp">
+        		<div class="text">
+					<p style="color:#774B4B">重得失去载体</p>
+	
+				</div>
+            <i class="up"></i>
+        	</div>
+        </section>
+        <section class="sec_desc5">
+        	<div class="h_wrp">
+        		<div class="text">
+					<p style="color:#774B4B">无法落笔</p>
+            <i class="up"></i>
+        	</div>
+        </section>
+        <section class="sec_desc6">
+        	<div class="h_wrp">
+        		<div class="text">
+					<p style="color:#774B4B">没有任何一种生活品质</p>
+				</div>
+            <i class="up"></i>
+        	</div>
+        </section>
+
+        <section class="sec_desc7">
+            <div class="h_wrp">
+                <div class="text">
+                    <p style="color:#774B4B">叫坦率</p>
+                </div>
+            <i class="up"></i>
+            </div>
+        </section>
+        <section class="sec_desc8">
+            <div class="h_wrp">
+                <div class="text">
+                    <p style="color:#774B4B">所以</p>
+                    <p style="color:#774B4B">对一杯咖啡来说</p>
+                </div>
+            <i class="up"></i>
+            </div>
+        </section>
+        <section class="sec_desc9">
+            <div class="h_wrp">
+                <div class="text">
+                    <p style="color:#774B4B">加糖还是加盐</p>
+
+                </div>
+            <i class="up"></i>
+            </div>
+        </section>
+        <section class="sec_desc10">
+            <div class="h_wrp">
+                <div class="text">
+                    <p style="color:#774B4B">任何界定都是模糊的</p>
+                    <p style="color:#774B4B">好累</p>
+                </div>
+            <i class="up"></i>
+            </div>
+        </section>
+        <section class="sec_desc11">
+            <div class="h_wrp">
+                <div class="text">
+                    <p style="color:#774B4B">为了更好的惩恶扬善</p>
+
+                </div>
+            <i class="up"></i>
+            </div>
+        </section>
+        <section class="sec_desc12">
+            <div class="h_wrp">
+                <div class="text">
+                    <p style="color:#774B4B">分辨对错</p>
+                    <p style="color:#774B4B">告诉你</p>
+                </div>
+            <i class="up"></i>
+            </div>
+        </section>
+        <section class="sec_desc13">
+            <div class="h_wrp">
+                <div class="text">
+                    <p style="color:#774B4B">我爱你</p>
+                    <p style="color:#774B4B;font-size:20px;">圣诞快乐！</p>
+
+                </div>
+            <i class="up"></i>
+            </div>
+        </section>
+		
+         	
+    </div>
+
+</body>
+
+<script src="scripts/zepto.min.js"></script>
+<script src="scripts/music.js"></script>
+<script src="scripts/layer.m.js"></script>
+<script src="scripts/parallax.js"></script>
+<script src="scripts/index.js"></script>
+
+
+</html>

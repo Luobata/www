@@ -1,0 +1,178 @@
+<?php !defined('FRAMEWORK_PATH') && exit('Access Denied');?><!DOCTYPE html>
+<head>   
+	<title><?php if(!empty($_title)) { foreach($_title as &$title) {?><?php echo isset($title) ? $title : '';?><?php }} ?></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="MSSmartTagsPreventParsing" content="True" />
+	<meta http-equiv="MSThemeCompatible" content="Yes" />
+	<link href="<?php echo isset($bbsconf['static_url']) ? $bbsconf['static_url'] : '';?>view/common.css" type="text/css" rel="stylesheet" />
+	<style>
+		#body {margin: 0px;}
+		/* accordion 仅后台使用 */
+		#accordion h3, #accordion ul {padding:0px;margin:0px;}
+		#accordion h3 {font-size:12px; color:#FFFFFF; line-height: 20px; height: 20px; text-indent: 4px; padding:0px; cursor:pointer; background:url('../view/image/page.gif') repeat-x;}
+		#accordion h3 a {color:#FFFFFF;}
+		#accordion ul {padding-bottom:2px; border-left:1px #CCCCCC solid; border-right:1px #CCCCCC solid;}
+		#accordion li {font-size:12px; padding-left:10px; list-style-type:none; background-color:#FFFFFF; line-height:1.8;}
+		.width {width: 800px; margin: auto; overflow: hidden;}
+	</style>
+	<script type="text/javascript">
+	var cookie_pre = '<?php echo isset($conf['cookie_pre']) ? $conf['cookie_pre'] : '';?>';
+	</script>
+</head>
+<body>
+<div id="body">
+
+<style type="text/css">
+h3 {height: 30px;}
+.forumlist {padding-left: 0px; margin-left: 32px;}
+.forumlist li{
+	height: 30px; list-style: none; padding-left: 0px; margin-left: 0px;
+}
+</style>
+<div class="width">
+	<form action="http://localhost/myxiuno/admin/?forum-list.htm" method="post" id="forumform">
+		<input type="hidden" name="FORM_HASH" value="<?php echo FORM_HASH;?>" />
+		<div class="div" style="width: 780px;">
+			<div class="header">管理版块 ( 请控制版块数在30个以内，过多版块会影响性能。）</div>
+			<div class="body">
+				
+			<table width="100%" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="25%" class="bg2" valign="top">
+						<ul>
+							<li>支持一级分类</li>
+							<li>需要更多分类，请留意主题分类这个功能。</li>
+						</ul>
+					</td>
+					<td width="75%" valign="top" class="bg1">
+						<ul class="forumlist">
+						<?php if(!empty($forumlist)) { foreach($forumlist as &$forum) {?>
+							<li>
+								<input type="text" name="name[<?php echo isset($forum['fid']) ? $forum['fid'] : '';?>]" value="<?php echo isset($forum['name']) ? $forum['name'] : '';?>" size="16" />
+								<span class="small grey">顺序:</span><input type="text" name="rank[<?php echo isset($forum['fid']) ? $forum['fid'] : '';?>]" value="<?php echo isset($forum['rank']) ? $forum['rank'] : '';?>" style="width: 30px" title="数字顺序，1-255，越大越靠前" />
+								<a type="button" class="button smallblue" value="编辑" onclick="window.location='http://localhost/myxiuno/admin/?forum-update-fid-<?php echo isset($forum['fid']) ? $forum['fid'] : '';?>.htm';return false;" href="javascript:void(0)" role="button"><span>编辑</span></a> 
+								<a type="button" class="button smallgrey" value="删除" onclick="if(window.confirm('您确定删除 <?php echo isset($forum['name']) ? $forum['name'] : '';?> 吗？')) window.location='http://localhost/myxiuno/admin/?forum-delete-fid-<?php echo isset($forum['fid']) ? $forum['fid'] : '';?>.htm';return false;" href="javascript:void(0)" role="button"><span>删除</span></a>
+								
+							</li>
+						<?php }} ?>
+							<li id="forumaddlink" style="clear: both;">
+								<a href="javascript: void(0)" onclick="addforum()" class="red" style="_margin-left: 32px;">[+]添加版块：</a>
+							</li>
+						</ul>
+						<div class="box" style="text-align: center; margin-top: 4px;">
+							<a type="submit" value=" 保存修改 " class="button bigblue" id="mdeleteforum" href="javascript:void(0)" role="button"><span> 保存修改 </span></a>
+							<div id="notice" class="notice" style="display: none;"></div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			</div>
+		</div>
+	</form>
+	
+	<!-- 需要克隆的节点放在表单外面，防止被提交。 -->
+	<li id="forumadddiv" style="display: none;">
+		<input type="text" name="newname[]" size="16" value="版块名称" />
+		<span class="small grey">顺序:</span><input type="text" name="newrank[]" value="0" style="width: 30px" title="数字顺序，0-255，越小越靠前" />
+		
+	</li>
+	
+</div>
+</div>
+<div id="footer">
+
+	<div style="height: 35px; padding: 8px;">
+		<div style="width: 40%; float: left;">
+			<?php echo isset($conf['app_copyright']) ? $conf['app_copyright'] : '';?><br />
+			Powered by  <a href="http://www.xiuno.com" target="_blank" class="grey">Xiuno BBS <b><?php echo isset($conf['version']) ? $conf['version'] : '';?></b></a>
+		</div>
+		<div style="width: 60%; float: right; text-align: right;">
+			<?php echo isset($conf['china_icp']) ? $conf['china_icp'] : '';?><br />
+			<?php echo isset($_SERVER['time_fmt']) ? $_SERVER['time_fmt'] : '';?>, 耗时:<?php echo number_format(microtime(1) - $_SERVER['starttime'], 4);?>s
+		</div>
+	</div>
+
+	<?php if(DEBUG) { ?>
+
+<div class="box">
+<h3>Debug Information: </h3>
+<pre>
+
+<b>Memory</b> = <?php echo memory_get_usage();?>
+
+<b>Processtime</b> = <?php echo number_format(microtime(1) - $_SERVER['starttime'], 4);?>
+
+<b>REQUEST_URI:</b> = <a href="<?php echo isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';?>" target="_blank" style="color: #888888"><?php echo isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';?></a>
+
+<b>_GET</b> = <?php echo htmlspecialchars(print_r($_GET, 1));?>
+
+<b>_POST</b> = <?php echo htmlspecialchars(print_r($_POST, 1));?>
+
+<b>_COOKIE</b> = <?php echo htmlspecialchars(print_r($_COOKIE, 1));?>
+
+<b>SQL:</b> = <?php isset($_SERVER['sqls']) && print_r($_SERVER['sqls']);?>
+
+<b>_user</b> = <?php print_r($_user);?>
+
+<b>include:</b> = <?php print_r(get_included_files());?>
+
+</pre>
+	
+</div>
+
+<?php } ?>
+</div>
+
+<?php if(DEBUG) { ?>
+<script src="<?php echo isset($bbsconf['static_url']) ? $bbsconf['static_url'] : '';?>view/js/jquery-1.4.full.js" type="text/javascript" ></script>
+<?php } else { ?>
+<script src="<?php echo isset($bbsconf['static_url']) ? $bbsconf['static_url'] : '';?>view/js/jquery-1.4.min.js" type="text/javascript" ></script>
+<?php } ?>
+
+<script src="<?php echo isset($bbsconf['static_url']) ? $bbsconf['static_url'] : '';?>view/js/dialog.js" type="text/javascript"></script>
+<script src="<?php echo isset($bbsconf['static_url']) ? $bbsconf['static_url'] : '';?>view/js/common.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+$('a.ajaxdialog, input.ajaxdialog').die('click').live('click', ajaxdialog_click);
+$('a.ajaxtoggle').die('click').live('click', ajaxtoggle_event);
+
+$('div.list .table tr:odd').not('tr.header').addClass('odd');	/* 奇数行的背景色 */
+$('div.list .table tr:last').addClass('last');	/* 奇数行的背景色 */
+
+
+</script>
+
+<script type="text/javascript">
+
+function addforum() {
+	var jdiv = $('#forumadddiv').clone();
+	jdiv.insertBefore('#forumaddlink').show();
+	return false;
+}
+
+$('#mdeleteforum').click(function() {
+	$('#forumform').submit();
+	return false;
+});
+
+<?php if(!empty($error)) { foreach($error as $k=>&$v) {?>
+<?php if($v) { ?>
+	$('#<?php echo isset($k) ? $k : '';?>').alert('<?php echo isset($v) ? $v : '';?>');
+<?php } ?>
+<?php }}?>
+
+<?php if(!empty($_POST)) { ?>
+<?php if(empty($error)) { ?>
+	$('#notice').html('保存成功！').show();
+<?php } else { ?>
+	$('#notice').html('保存失败！').show();
+<?php } ?>
+<?php } ?>
+
+</script>
+
+
+
+</body>
+</html>

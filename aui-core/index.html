@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="css/base.css" type="text/css"  rel="stylesheet" media="all" />
+<style>
+#demo { width:735px; height:auto; position:relative; z-index:0; }
+#demo li { margin:5px; background:#fff; border:5px solid #fff; position:absolute; left:0; top:0; z-index:1; }
+#demo li p { line-height:50px; text-align:center; }
+.hidden { overflow:hidden; }
+#loading { background:#fff url(images/loading.gif) no-repeat 10px center; height:50px; line-height:50px; width:140px; text-align:center; position:absolute; left:0; top:0; z-index:2; padding-left:30px; padding-right:5px; border:2px #aaa solid; display:none; }
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Aui-core实现模拟MVC单列表绝对定位版瀑布流js特效</title>
+<meta name="Keywords" content="Aui-core实现模拟MVC单列表绝对定位版瀑布流js特效,Jquery插件,Jquery原创,Jquery资源,Jquery特效,div+css,JquerySchool" />
+<meta name="description" content="JquerySchool是一个专门分享jquery资源、jquery插件、jquery特效的一个网站,完全开放源代码,把实际开发中应用最多、最实用的Jquery资源抽取出来再加以精心编排,让广大网友能以最短的时间、花最少的精力去真正掌握jQuery开发的知识。" />
+<script src="js/Aui-core-1.42-min.js" language="javascript" type="text/javascript"></script>
+<script>
+
+// Create object
+var Waterfall = Waterfall || {} ;
+
+// Controller object
+Waterfall.controller = function( A$ )
+{
+	var _view = Waterfall.view;
+	
+	_view.appendLoad( "<div id=\"loading\">图片列表加载中 ...</div>", A$ );
+	
+	return {
+		
+		config : function( w, c, b, m, o )
+		{
+			_view.iWidth = w;
+			_view.iCount = c;
+			_view.iBoder = b;
+			_view.iMargin = m;
+			_view.oList = o;
+			_view.oload = A$("#loading");
+		},
+		
+		init : function( callback )
+		{
+			_view.init( A$ );
+			
+			( typeof callback ).toLowerCase() === "function" && callback.call( this );
+		},
+		
+		event : function()
+		{
+			var e = _view.Event();
+			
+			return {
+				scroll : function( _window )
+				{
+					e.scroll.call( e, _window, A$ );
+				}
+			}
+		}
+	}
+
+};
+
+// View object
+Waterfall.view = {
+	
+	// aHeight [ 0 => left , 1 => center , 2 => right ]
+	aHeight : [ [], [], [] ],
+	
+	appendLoad : function( str, A$ )
+	{
+		!A$.byID("#loading")[0] && A$("body").append( str );
+	},
+	
+	preLoad : function( win, o , t )
+	{		
+		o.setStyle( "left", ( win.width() - o.width( true ) )/2 )
+		 .stop()
+		 .fx({ "top": ( win.height() - o.height( true ) )/2 + t }, 200 );
+	},
+	
+	loadShow : function( o )
+	{
+		o.show();
+	},
+	
+	loadHide : function( o )
+	{
+		o.hide();
+	},
+
+	Event : function()
+	{
+		var e = this;
+		
+		return {
+			scroll : function( _win, A$ )
+			{
+				var viewHeight, oload, oWrap, bool, view;
+				
+				view = Waterfall.view;
+				viewHeight = _win.height();
+				oload = view.oload;
+				oWrap = Waterfall.view.oList.eq(0).parents();
+				bool = true;
+				
+				_win.bind( "scroll", function()
+				{
+					var iTop, lastListTop, olist;
+					
+					iTop = _win.scrollTop();
+					olist = oWrap.children();
+					
+					lastListTop = olist.eq( olist.length - 1 ).top( true );
+					
+					//oload.getStyle("display") === "block" && 
+					e.preLoad( _win, oload, iTop );
+					
+					if( lastListTop < iTop + viewHeight && bool )
+					{
+
+						view.loadShow( oload );
+						
+						bool = false;
+						
+						// 获取数据
+						Waterfall.model.getInformation( A$, function( list, _b )
+						{
+							this.page += 1;
+							
+							var title = list.title;
+							
+							var page = this.page - 1;
+							
+							A$.each( list.src, function( i, v )
+							{
+								var _this, iNow, iStep, iLeft, iTop, j;
+								
+								iNow = i%view.iCount;
+								iStep = Math.floor( i/view.iCount ) + page * view.iCount;
+								iLeft = iNow * ( view.iWidth + view.iBoder + view.iMargin );
+								
+								_this = document.createElement("li");
+								_this.style.cssText = "left:"+ iLeft +"px;display:block;";
+								_this.innerHTML = "<img src=\"" + v + "\" /><p>"+ title[ i ] +"</p>";
+
+								oWrap.append( _this );
+								
+								view.aHeight[ iNow ].push( _this.offsetHeight );
+								
+								iTop = 0;
+								
+								for( j = 0; j < iStep; j += 1 )
+								{
+									iTop += view.aHeight[ iNow ][ j ] + view.iMargin;
+								};
+								
+								_this.style.top = iTop + "px";
+							});
+							
+							bool = _b;
+							
+							view.loadHide( oload );
+						});
+					};
+				});
+			}
+		};
+	},
+	
+	init : function( A$ )
+	{
+		var _self, _view, _load, _win;
+		
+		_self = this;
+		_view = Waterfall.view;
+		_load = _view.oload;
+		_win = A$( window );
+		
+		_self.loadShow( _load );
+		_self.preLoad( _win, _load, _win.scrollTop() );
+
+		_view.oList
+	    	 .eq( 0 )
+	    	 .parents()
+			 .removeClass("hidden");
+		
+		A$.each( _self.oList, function( i, v )
+		{
+			var _this, iNow, iStep, iLeft, iTop, j;
+			
+		    _this = A$( this );
+			
+			iNow = i%_self.iCount;
+			iStep = Math.floor(i/_self.iCount);
+			iLeft = iNow * ( _self.iWidth + _self.iBoder + _self.iMargin );
+			
+			_view.aHeight[ iNow ].push( _this[0].offsetHeight );
+			
+			iTop = 0;
+			
+			if( iStep )
+			{
+				for( j = 0; j < iStep; j += 1 )
+				{
+					iTop += _view.aHeight[ iNow ][ j ] + _self.iMargin;
+				};
+			};
+			
+			_this.setStyle({ 
+				left : iLeft,
+				top : iTop
+			});
+		});
+		
+		_self.loadHide( _load );
+	}
+};
+
+// Model object
+Waterfall.model = {
+	
+	page : 1,
+	
+	getInformation : function( A$, success  )
+	{
+		var _self = this;
+		
+		A$.ajax({
+			type : "get",
+			// 本地模拟数据
+			url : "data" + _self.page +".js", // 测试data.js 
+			// PHP环境模拟数据
+			//url : "data.php?page=" + _self.page + "&num=9", // 测试data.php
+			success : function( data )
+			{
+				var json = eval( "(" + data + ")" );
+				
+				if( json.code === "1" )
+				{
+					success.call( _self, json.list, true );
+				}
+				else
+				{
+					Waterfall.view.loadHide( Waterfall.view.oload );
+				};
+			}
+		});
+	}
+};
+
+
+window.onload = function()
+{
+	
+	var oList, o, oWin;
+	
+	oWin = Aui( window );
+	oList = Aui( "#demo li");
+	// 实例化对象
+	o = new Waterfall.controller( Aui );
+	// 配置参数( 宽度，纵向个数， 边框像素（单边*2）, 外边距像素(单边*2), Aui列表对象 )
+	o.config( 225, 3, 10, 10, oList )
+	// 初始化定位布局
+	o.init( function()
+	{
+		// 调用滑轮事件
+		this.event().scroll( oWin )
+	});
+};
+
+</script>
+</head>
+<body>
+<h1>Adam ' Aui 单列表绝对定位版瀑布流 （ javascript 模拟MVC ）</h1>
+<ul id="demo" class="hidden tabs_wrap" >
+  <li> <img src="images/1.jpg" />
+    <p>这个是标题1</p>
+  </li>
+  <li> <img src="images/2.jpg" />
+    <p>这个是标题2</p>
+  </li>
+  <li> <img src="images/3.jpg" />
+    <p>这个是标题3</p>
+  </li>
+  <li> <img src="images/4.jpg" />
+    <p>这个是标题4</p>
+  </li>
+  <li> <img src="images/5.jpg" />
+    <p>这个是标题5</p>
+  </li>
+  <li> <img src="images/6.jpg" />
+    <p>这个是标题6</p>
+  </li>
+  <li> <img src="images/7.jpg" />
+    <p>这个是标题7</p>
+  </li>
+  <li> <img src="images/8.jpg" />
+    <p>这个是标题8</p>
+  </li>
+  <li> <img src="images/9.jpg" />
+    <p>这个是标题9</p>
+  </li>
+  <li> <img src="images/1.jpg" />
+    <p>这个是标题1</p>
+  </li>
+  <li> <img src="images/2.jpg" />
+    <p>这个是标题2</p>
+  </li>
+  <li> <img src="images/3.jpg" />
+    <p>这个是标题3</p>
+  </li>
+  <li> <img src="images/4.jpg" />
+    <p>这个是标题4</p>
+  </li>
+  <li> <img src="images/5.jpg" />
+    <p>这个是标题5</p>
+  </li>
+  <li> <img src="images/6.jpg" />
+    <p>这个是标题6</p>
+  </li>
+  <li> <img src="images/7.jpg" />
+    <p>这个是标题7</p>
+  </li>
+  <li> <img src="images/8.jpg" />
+    <p>这个是标题8</p>
+  </li>
+  <li> <img src="images/9.jpg" />
+    <p>这个是标题9</p>
+  </li>
+</ul>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</body>
+</html>

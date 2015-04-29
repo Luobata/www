@@ -1,0 +1,52 @@
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" name="viewport">
+    
+    <link type="text/css" rel="stylesheet" href="scripts/valid.css" />
+</head>
+
+<body>
+	
+    <img class="qb" src="images/qb.png" style="width:100%;margin-top:30%">
+       
+    <img src="images/intro.png" style="width:100%" >
+
+
+    </form>
+</body>
+<script type="text/javascript">
+    (function() {
+    function i() {
+        WeixinJSBridge.on("menu:share:appmessage", s), WeixinJSBridge.on("menu:share:timeline", o)
+    }
+    function s() {
+        WeixinJSBridge.invoke("sendAppMessage", {
+            //appid: "wxaf1d4daa8e0ec0b5",
+            img_url: t,
+            img_width: "150",
+            img_height: "150",
+            link: e,
+            desc: n,
+            title: r
+        }, function(e) {})
+    }
+    function o() {
+        WeixinJSBridge.invoke("shareTimeline", {
+            img_url: t,
+            img_width: "150",
+            img_height: "150",
+            link: e,
+            desc: n,
+            title: n
+        }, function(e) {})
+    }
+    var e = "http://2.lenovoschool.sinaapp.com/",
+        t = "http://2.lenovoschool.sinaapp.com/images/xz.png",
+        n = "联想校招欢迎你！",
+        r = "联想校招欢迎你";
+    typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function" ? i() : document.addEventListener ? document.addEventListener("WeixinJSBridgeReady", i, !1) : document.attachEvent && (document.attachEvent("WeixinJSBridgeReady", i), document.attachEvent("onWeixinJSBridgeReady", i))
+})()
+</script>
+</html>

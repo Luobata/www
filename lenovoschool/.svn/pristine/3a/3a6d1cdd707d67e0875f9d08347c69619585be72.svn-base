@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<?php 
+	if(!empty($_POST)){
+		//var_dump($_POST);
+        //exit();
+        //$con=mysqli_connect("localhost","root","","lenovoxz");
+		$con=mysqli_connect(SAE_MYSQL_HOST_M . ':' . SAE_MYSQL_PORT, SAE_MYSQL_USER, SAE_MYSQL_PASS);
+		echo "3";
+        if($con){
+            $query_sql="select * from user where name=".$_POST['name']." and identify=".$_POST['identify'];
+			echo $query_sql;
+            $query_res=mysqli_query($con,$query_sql);
+			echo "4";
+            if($query_res){
+                $fieldcount=mysqli_num_rows($query_res);
+				echo "5";
+                if($fieldcount){
+                    echo "1";
+					echo "<script>alert('success')</script>";
+                }else{
+                    echo "2";
+					echo "<script>alert('error')</script>";
+                }
+            }
+        }
+	}
+    
+?>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" name="viewport">
+    
+    <link type="text/css" rel="stylesheet" href="scripts/valid.css" />
+</head>
+
+<body>
+    <form class="vf" action="valid.php" id="valid" method="post">
+        <input  style="margin-top:15%" placeholder="请输入姓名" name="name"/>
+        <input  placeholder="请输入身份证号码" name="identify"/>
+        <img src="images/submit.png" style="width:75%;margin-top:16px;" onclick="valid.submit();">
+
+
+    </form>
+</body>
+<script type="text/javascript">
+    (function() {
+    function i() {
+        WeixinJSBridge.on("menu:share:appmessage", s), WeixinJSBridge.on("menu:share:timeline", o)
+    }
+    function s() {
+        WeixinJSBridge.invoke("sendAppMessage", {
+            appid: "wxaf1d4daa8e0ec0b5",
+            img_url: t,
+            img_width: "150",
+            img_height: "150",
+            link: e,
+            desc: n,
+            title: r
+        }, function(e) {})
+    }
+    function o() {
+        WeixinJSBridge.invoke("shareTimeline", {
+            img_url: t,
+            img_width: "150",
+            img_height: "150",
+            link: e,
+            desc: n,
+            title: n
+        }, function(e) {})
+    }
+    var e = "http://crbrsfadev.crc.com.cn:8080/zhaopin/index.htm",
+        t = "http://crbrsfadev.crc.com.cn:8080/zhaopin/images/crv.png",
+        n = "中国好人才，I want you，华润万家电商招聘开始了，快到家里来！",
+        r = "华润万家电商招聘邀请函";
+    typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function" ? i() : document.addEventListener ? document.addEventListener("WeixinJSBridgeReady", i, !1) : document.attachEvent && (document.attachEvent("WeixinJSBridgeReady", i), document.attachEvent("onWeixinJSBridgeReady", i))
+})()
+</script>

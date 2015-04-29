@@ -1,0 +1,14 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+	hideDotFiles = dotGitOnly
+[remote "github"]
+	url = https://github.com/Luobata/jQuery.luobata.select
+	fetch = +refs/heads/*:refs/remotes/github/*
+[branch "master"]
+	remote = github
+	merge = refs/heads/master

@@ -1,0 +1,9 @@
+*{margin: 0px;padding: 0px;border: 0px;}
+html,body{width:100%; height:100%;
+	background: url(../images/8.jpg) no-repeat;background-size:100% 100%;text-align: center;overflow: hidden;position: absolute;}
+
+.vf{background: url(../images/form.png) no-repeat;background-size:100% 100%;height: 257px;position: relative;overflow: hidden;
+margin-top:30%}
+
+input{width: 74%;height:14%;border-bottom: 1px #336633 solid;margin-bottom: 10px;}
+.vff{background: url(../images/form.png) no-repeat;background-size:100% 100%;height: 257px;position: relative;overflow: hidden;margin-top: 30%;}

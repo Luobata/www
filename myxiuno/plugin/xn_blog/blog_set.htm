@@ -1,0 +1,40 @@
+<!--{include header.htm}-->
+
+<div class="width">
+		
+	<form action="?blog-set.htm" method="post" id="brief_update_form">
+		<input type="hidden" name="FORM_HASH" value="{FORM_HASH}" />
+		<div style="width: 780px;">
+			<div class="list">
+				<table class="table">
+					<tr class="header">
+						<td>Xiuno Blog 设置</td>
+					</tr>
+					<tr>
+						<td>Xiuno Blog 标题：<input type="text" name="title" value="$setting[title]"/></td>
+					</tr>
+					<tr>
+						<td valign="top">Xiuno Blog 简介：<textarea style="width: 600px; height: 120px;" id="brief_text" name="brief">$setting[brief]</textarea></td>
+					</tr>
+					<tr>
+						<td align="right">
+							<input convert="true" type="button" value="编辑" class="button smallblue" id="brief"/>
+							<div class="notice" id="notice" style="display: none;"></div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</form>
+</div>
+<!--{include footer.htm}-->
+
+<script>
+$("#brief").click(function(){
+	$('#brief_update_form').submit();
+	$('#notice').html('编辑成功！').show();
+	return false;
+});
+</script>
+</body>
+</html>

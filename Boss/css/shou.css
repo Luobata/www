@@ -1,0 +1,47 @@
+@charset "utf-8";
+/*
+*
+* webname:维度端前端网
+* website:http://www.weiduduan.com/
+* author:vdu
+* qq:2210682628
+*
+*/
+
+/* reset */
+body{font:12px/18px "宋体",arial,sans-serif;color:#585858;}
+
+body,div,p,span,form,iframe,table,td,th,input,textarea,button,label,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6{font-size:100%; }
+ul,ol,li,dl{list-style-type:none;}
+em,i,dfn,cite,strong,small{font-style:normal;} 
+img{border:0;}
+fieldset,button,input,select,option{vertical-align:middle;font:12px/18px "宋体",arial,sans-serif;}
+table{border-collapse:collapse;border-spacing:0}
+textarea{resize:none}
+
+/*color 全站颜色样式定义*/
+a:link,a:visited{color:#575757;text-decoration:none;}
+a:hover{color:#ef4165;text-decoration:none;}
+a:active{color:#1d7400;}
+
+/* clearfix */
+.clearfix:after{ visibility:hidden; display:block; font-size:0; content:" "; clear:both; height:0;}
+*html .clearfix{ zoom:1;} .clearfix{ width:100%;}
+
+/* public.omission */
+.fl{ float:left;}            .fr{ float:right;}            .tc{ text-align:center;}      .tr{ text-align:right;} 
+.fb{ font-weight:bold;}      .f12{ font-size:12px;}        h3{ font-weight:normal;}      .listop{ padding-top:15px;}
+.mr10{ margin-right:10px;}   .mr15{ margin-right:15px;}    .mL10{ margin-left:10px;}     .mL15{ margin-left:15px;}
+.mt10{ margin-top:10px;}     .mt15{ margin-top:15px;}      .mb10{ margin-bottom:10px;}   .mb15{ margin-bottom:15px;}
+
+/* weiduduan */
+.weiduduan{ width:510px; margin:15px auto 0 auto;}
+.scroll,.move{position:relative;width:960px;height:490px; float:left; margin-right:20px; display:inline; overflow:hidden;}
+.scrollDesc ul,.moveDesc ul{width:960px;height:490px;position:absolute;}
+.scrollDesc li,.moveDesc li{float:left;}
+.scroll img,.move img{width:960px;height:490px;}
+.scrollBar,.moveBar{position:absolute;right:10px;bottom:15px;}
+.scrollBar li,.moveBar li{float:left;margin-right:8px;width:21px;height:21px;line-height:21px;font-size:13px;cursor:pointer;text-align:center;background:url(../img/btn02.png) no-repeat;}
+.scrollBar li.current,.moveBar li.current{color:#fff;width:21px;cursor:pointer;color:#fff;background:url(../img/btn01.png) no-repeat;}
+/* 维度端前端网整理 http://www.weiduduan.com */

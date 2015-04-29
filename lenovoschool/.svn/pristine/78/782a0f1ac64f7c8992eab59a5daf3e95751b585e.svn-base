@@ -1,0 +1,27 @@
+var audio = document.getElementById("bg-m")
+   $("#play-btn").bind("click",function(){
+    $('#play-btn').hide();
+    $('#pause-btn').show();
+   	audio.play();
+   })
+
+   $("#pause-btn").bind("click",function(){
+    $('#play-btn').show();
+    $('#pause-btn').hide();
+   	audio.pause();
+  
+   })
+
+
+   $("#kx").bind("click", function(){
+	alert("1");
+    
+   });
+   window.onload=function(){
+   	audio.play();
+   }
+audio.play();
+  
+
+
+

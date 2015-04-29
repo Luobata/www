@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+ul{margin:0;padding:0;}
+li{list-style-type:none;}
+.scroll{position:relative; float:left; margin-right:20px; display:inline; overflow:hidden;}
+.scrollDesc ul{position:absolute;}
+.scrollDesc li{float:left;}
+.scrollBar{position:absolute;right:10px;bottom:15px;}
+.scrollBar li{float:left;margin-right:8px;width:21px;height:21px;line-height:21px;font-size:13px;cursor:pointer;text-align:center;background:url(../img/btn02.png) no-repeat;}
+.scrollBar li.current{color:#fff;width:21px;cursor:pointer;color:#fff;background:url(../img/btn01.png) no-repeat;}

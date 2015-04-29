@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/jquery.select.css">
+	</head>
+	<body>
+		<select name="choose" class="choose">
+			<option value="1" >选择Pokemon</option>
+			<option value="2">皮卡丘</option>
+			<option value="喷火龙"selected="selected">喷火龙</option>
+			<option value="巨钳螳螂">巨钳螳螂</option>
+			<option value="暴鲤龙" selected="selected">暴鲤龙</option>
+		</select>
+
+
+		<select name="choose" class="choose">
+			<option value="0" >Pokemon</option>
+			<option value="1">1</option>
+			<option value="2" selected="selected">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+		</select>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.select.js" ></script>
+		<script>
+			$(function(){
+				$('.choose').select();
+				//$('.choose2').select();
+			});
+		</script>
+	</body>
+</html>

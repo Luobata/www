@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+			<input type="file" id="fileSelect" multiple="multiple" accept="image/*" >
+			<div id="fileShow" style="width:200px;"></div>
+			<input type="button" id="fileUpload" value="上传" />
+			<div id="progress"></div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/Luobata.fileupload.js"></script>
+		<script>
+		//初始化input
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	    <meta charset="UTF-8" />
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=0, minimum-scale=1.0,maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<link rel="stylesheet" type="text/css" href="css/2.css" />
+
+    <style type="text/css">
+        .progress{width: 282px; margin-top:auto;margin-right:auto;height: 8px; background-color: #CCC; position: relative;top:151px;left:20px;}
+        .progress .ibar {width: 0px; height: 8px; background-color: #ffcc00; position: absolute;}
+       
+    </style>
+
+<script type="text/javascript" charset="utf-8" src="js/jquery-1.10.2.js"></script> 
+
+
+<script type="text/javascript"> 
+var count=0;
+var setTime;
+var isRight=function(){
+     if (count==5)
+     {
+        success();
+        return true;
+     }
+     else 
+     {
+        
+        return  false;
+       }
+    };
+
+   var timeout=function(){
+     if (count==5)
+     {
+        success();
+        return true;
+     }
+     else 
+     {
+        fail();
+        return  false;
+       }
+    };
+
+
+
+   
+   var success=function(){
+     clearTimeout(setTime);
+     $(".content").hide();
+     $(".success").show();
+     $(".to3btn").show();
+
+   }
+
+   var fail=function(){
+      $(".content").hide();
+     $(".fail").show();
+     $(".reload").show();
+   }
+
+
+
+
+$(document).ready(function(){
+    $(".choose").bind("click",function(e){
+        var d=e.srcElement||e.target;
+        var cid=$(d).attr('id');
+ 
+        if(cid==7||cid==9||cid==10||cid==11||cid==15)
+         {
+            count++;
+          //选中图片消失
+           $(d).hide();
+           isRight();
+        }
+      });
+
+
+    $(function(){
+        $("#ibar").animate(
+            {"width":"282px"},
+            {
+                duration:10000,
+                easing:"linear",
+                step: function(now, fx){
+                    $("#num").css({"left":now+"px"}).html(parseInt(now/9));
+                }
+            }
+        );
+        setTime=setTimeout("timeout()",10000);
+    });
+
+
+     $(".reload").bind("click",function(e){
+        location.reload();
+      });
+
+ 
+
+
+})
+</script> 
+
+</head>
+
+<body>
+ 
+<div class="shade"></div>
+
+<div class="content">
+   <div class="progress">
+            <div class="ibar" id="ibar"></div>
+       
+  </div>
+
+    <table>
+        <tr>
+           <td class="choose" ><img id="1" src="img/1.jpg" /></td>
+           <td class="choose" ><img id="2" src="img/2.jpg" /></td>
+           <td class="choose" ><img id="3" src="img/3.jpg" /></td>
+           <td class="choose" ><img id="4" src="img/4.jpg" /></td>
+        </tr>
+
+       <tr>
+           <td class="choose" ><img id="5" src="img/5.jpg" /></td>
+           <td class="choose" ><img id="6" src="img/6.jpg" /></td>
+           <td class="choose" ><img id="7" src="img/7.jpg" /></td>
+           <td class="choose" ><img id="8" src="img/8.jpg" /></td>
+        </tr>
+
+        <tr>
+           <td class="choose" ><img id="9" src="img/9.jpg" /></td>
+           <td class="choose" ><img id="10" src="img/10.jpg" /></td>
+           <td class="choose" ><img id="11" src="img/11.jpg" /></td>
+           <td class="choose" ><img id="12" src="img/12.jpg" /></td>
+        </tr>
+
+         <tr>
+           <td class="choose" ><img id="13" src="img/13.jpg" /></td>
+           <td class="choose" ><img id="14" src="img/14.jpg" /></td>
+           <td class="choose" ><img id="15" src="img/15.jpg" /></td>
+           <td class="choose" ><img id="16" src="img/16.jpg" /></td>
+        </tr>
+
+    </table>
+
+</div>
+
+<div class="success"></div>
+<div class="fail"></div>
+<a href="3.html"><img class="to3btn" src="img/2-3-btn.png" /></a>
+
+<img class="reload" src="img/reload.png" />
+
+  <script type="text/javascript" src="js/fx.js"></script> 
+</body>
+</html>

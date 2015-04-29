@@ -1,0 +1,14 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+	hideDotFiles = dotGitOnly
+[remote "jQuery放大镜插件"]
+	url = https://github.com/Luobata/jQuery.ImgBig
+	fetch = +refs/heads/*:refs/remotes/jQuery放大镜插件/*
+[branch "master"]
+	remote = jQuery放大镜插件
+	merge = refs/heads/master

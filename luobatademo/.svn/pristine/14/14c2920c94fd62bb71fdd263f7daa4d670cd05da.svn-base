@@ -1,0 +1,12 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+	hideDotFiles = dotGitOnly
+[remote "个人Github-Luobata"]
+	url = https://github.com/Luobata/FileUpload
+	fetch = +refs/heads/*:refs/remotes/个人Github-Luobata/*
+	pushurl = https://github.com/Luobata/FileUpload

@@ -1,0 +1,28 @@
+document.addEventListener('touchstart', function () {
+    document.getElementsByTagName('audio')[0].play();
+    document.getElementsByTagName('audio')[0].pause();
+});
+
+var audio = document.getElementById("bg-m");
+   window.onload=function(){
+   	audio.play();
+   }
+audio.play();
+   $("#play-btn").bind("click",function(){
+    $('#play-btn').hide();
+    $('#pause-btn').show();
+   	audio.play();
+   })
+
+   $("#pause-btn").bind("click",function(){
+    $('#play-btn').show();
+    $('#pause-btn').hide();
+   	audio.pause();
+  
+   })
+
+
+  
+
+
+

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	    <meta charset="UTF-8" />
+	    <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=0, minimum-scale=1.0,maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<link rel="stylesheet" type="text/css" href="css/1.css" />
+
+<script type="text/javascript" charset="utf-8" src="js/jquery-1.10.2.js"></script> 
+<script type="text/javascript" src="js/jquery-ui.min.js"></script> 
+<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script> 
+
+<script type="text/javascript">   
+
+
+var isdrag=false;   
+var tx,x;    
+
+
+
+$(function(){  
+
+  $("#moveid").draggable({
+  stop: function(event, ui) { 
+
+    if(isRight())
+       success();}
+});
+  /*
+    document.getElementById("moveid").addEventListener('touchend',function(){  
+        isdrag = false;  
+        if(isRight()) success();
+    });  
+    document.getElementById("moveid").addEventListener('touchstart',selectmouse);  
+    document.getElementById("moveid").addEventListener('touchmove',movemouse);  
+    */
+});
+
+/* 
+function movemouse(e){   
+  
+  if (isdrag){   
+   var n = tx + e.touches[0].pageX - x;
+   var m = tx + e.touches[0].pageY - y;   
+   $("#moveid").css("left",n);
+   $("#moveid").css("top",m);    
+   return false;   
+   }   
+}   
+ 
+function selectmouse(e){  
+ 
+   isdrag = true;   
+   tx = parseInt(document.getElementById("moveid").style.left+0);
+   ty = parseInt(document.getElementById("moveid").style.top+0);  
+  
+   x = e.touches[0].pageX; 
+   y = e.touches[0].pageY;   
+   return false;   
+}   
+*/
+
+function isRight(){
+
+
+	tx = parseInt(document.getElementById("moveid").style.left+0);
+	x1= $(window).width() * 0.6;
+	x2= $(window).width() * 0.7;
+    ty = parseInt(document.getElementById("moveid").style.top+0);   
+    console.log(ty);
+
+    y1= $(window).height() * 0.54;
+	y2= $(window).height() * 0.7;
+	console.log(y1);
+  
+
+	if (
+		   tx>x1 && tx<x2 &&ty>y1 &&ty<y2
+	
+		   )
+		return true;
+	else 
+		return false;
+
+
+}
+
+function success(){
+
+    $("#moveid").hide();
+    $("#land").hide();
+    $(".success").show();
+}
+</script> 
+
+</head>
+
+<body>
+ 
+
+<img id="land" src="img/land.png" />
+
+<img id="moveid" src="img/mario.png"  >
+
+<div class="success">
+	<a href='2-0.html'><img src="img/btn1.png" style="width:160px;margin-top:95%"/></a>
+
+</div>
+
+  <script type="text/javascript" src="js/fx.js"></script> 
+</body>
+</html>

@@ -1,0 +1,14 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+	hideDotFiles = dotGitOnly
+[remote "个人github"]
+	url = https://github.com/Luobata/jQuery.ImgSlide
+	fetch = +refs/heads/*:refs/remotes/个人github/*
+[branch "master"]
+	remote = 个人github
+	merge = refs/heads/master
