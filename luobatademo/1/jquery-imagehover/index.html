@@ -1,0 +1,66 @@
+<!DOCYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>单页多图简单hover动画效果</title>
+    <link rel="stylesheet" type="text/css" href="./../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+<body>
+    <div class="center">
+        <ul class="img-hover">
+            <li class="img-li">
+                <a href="">
+                <div class="img-txt"><p>今天天气不错</p></div>
+                <div class="pic-auto"></div>
+                </a>
+            </li>
+            <li class="img-li">
+                <a href="">
+                <div class="img-txt"><p>今天天气不错</p></div>
+                <div class="pic-auto"></div>
+                </a>
+            </li>
+            <li class="img-li">
+                <a href="">
+                <div class="img-txt"><p>今天天气不错</p></div>
+                <div class="pic-auto"></div>
+                </a>
+            </li>
+            <li class="img-li">
+                <a href="">
+                <div class="img-txt"><p>今天天气不错</p></div>
+                <div class="pic-auto"></div>
+                </a>
+            </li>
+            <li class="img-li">
+                <a href="">
+                <div class="img-txt"><p>今天天气不错</p></div>
+                <div class="pic-auto"></div>
+                </a>
+            </li>
+            <li class="img-li">
+                <a href="">
+                <div class="img-txt"><p>今天天气不错</p></div>
+                <div class="pic-auto"></div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script type="text/javascript" src="./../js/jquery.min.js"></script>
+    <script type="text/javascript">
+        var li = $('.img-li');
+        li.bind('mouseenter', function () {
+            li.css('width', '174px');
+            $(this).css('width', '330px');
+            $(this).find('.img-txt').css('opacity', '0');
+        });
+        li.bind('mouseleave', function () {
+            $(this).find('.img-txt').css('opacity', '1');
+            li.css('width', '200px');
+        });
+
+    </script>
+</body>
+</html>

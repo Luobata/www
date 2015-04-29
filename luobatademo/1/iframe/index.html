@@ -1,0 +1,79 @@
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>浏览器工作模式</title>
+    </head>
+    <body>
+        <h1>Hello</h1>
+        <iframe src="./test.html" width="20%" height="50%" id="iframe1">
+
+        </iframe>
+        <input type="button" value="当前窗口的浏览器工作模式" id="button1">
+        <input type="button" value="非跨域的iframe的浏览器工作模式" id="button2">
+        <input type="button" value="动态创建的非跨域的iframe的浏览器工作模式" id="button3">
+
+        <script type="text/javascript">
+            var iframe = document.createElement('iframe');
+            iframe.src = "./test2.html";
+            iframe.id = "iframe2";
+            document.body.appendChild(iframe);
+
+
+            var btn1 = document.getElementById('button1'),
+                btn2 = document.getElementById('button2'),
+                btn3 = document.getElementById('button3'),
+                iframe = document.getElementById('iframe1'),
+                iframe2 = document.getElementById('iframe2');
+            if(window.addEventListener){
+
+                btn1.addEventListener('click', function() {
+                if(document.compatMode === 'CSS1Compat') {
+                    console.log('当前浏览器是标准的工作模式');
+                } else {
+                    console.log('当前浏览器是非标准的工作模式');
+                }
+                });
+                btn2.addEventListener('click', function() {
+                    if(iframe.contentWindow.document.compatMode === 'CSS1Compat') {
+                        console.log('当前iframe是标准的工作模式');
+                    } else {
+                        console.log('当前iframe是非标准的工作模式');
+                    }
+                });
+                btn3.addEventListener('click', function() {
+                    if(iframe2.contentWindow.document.compatMode === 'CSS1Compat') {
+                        console.log('动态创建的iframe是标准的工作模式');
+                    } else {
+                        console.log('动态创建的iframe是非标准的工作模式');
+                    }
+                });
+
+            } else {
+                btn1.attachEvent('onclick', function() {
+                    if(document.compatMode === 'CSS1Compat') {
+                        console.log('当前浏览器是标准的工作模式');
+                    } else {
+                        console.log('当前浏览器是非标准的工作模式');
+                    }
+                });
+                btn2.attachEvent('onclick', function() {
+                    if(iframe.contentWindow.document.compatMode === 'CSS1Compat') {
+                        console.log('当前iframe是标准的工作模式');
+                    } else {
+                        console.log('当前iframe是非标准的工作模式');
+                    }
+                });                
+                btn3.attachEvent('onclick', function() {
+                    if(iframe2.contentWindow.document.compatMode === 'CSS1Compat') {
+                        console.log('动态创建的iframe是标准的工作模式');
+                    } else {
+                        console.log('动态创建的iframe是非标准的工作模式');
+                    }
+                }); 
+            }
+
+
+        </script>
+    </body>
+</html>

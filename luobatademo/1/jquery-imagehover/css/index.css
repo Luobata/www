@@ -1,0 +1,37 @@
+.center{
+    width: 100%;
+    margin: 50px auto;
+}
+.img-hover{
+    width: 1200px;
+    margin: 0 auto;
+}
+.img-hover .img-li{
+    width: 200px;
+    height: 220px;
+    float: left;
+    position: relative;
+    transition: all 2s ease-in-out;
+}
+.img-hover .img-li .img-txt{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.3);
+    transition: all 2s ease-in-out;
+}
+.img-hover .img-li .img-txt p{
+    width: 30px;
+    font: 30px/30px Microsoft Yahei;
+    position: relative;
+    margin: 0 auto;
+    
+}
+.img-hover .img-li .pic-auto{
+    width: 100%;
+    height: 100%;
+    background: url(./../../img/2.jpg) no-repeat center 0;
+}
+/*.img-hover .img-li:hover{
+    width: 330px;
+}*/

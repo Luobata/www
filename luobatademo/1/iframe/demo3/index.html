@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>浏览器工作模式</title>
+    </head>
+    <body>
+        <h1>Hello</h1>
+        <input type="button" value="动态创建的非跨域的iframe的浏览器工作模式" id="button3">
+
+        <script type="text/javascript">
+            var iframe = document.createElement('iframe');
+            iframe.src = "./test2.html";
+            iframe.id = "iframe2";
+            document.body.appendChild(iframe);
+            var btn3 = document.getElementById('button3'),
+                iframe2 = document.getElementById('iframe2');
+            if(window.addEventListener){
+                btn3.addEventListener('click', function() {
+                    if(iframe2.contentWindow.document.compatMode === 'CSS1Compat') {
+                        console.log('动态创建的iframe是标准的工作模式');
+                    } else {
+                        console.log('动态创建的iframe是非标准的工作模式');
+                    }
+                });
+
+            } else {              
+                btn3.attachEvent('onclick', function() {
+                    if(iframe2.contentWindow.document.compatMode === 'CSS1Compat') {
+                        console.log('动态创建的iframe是标准的工作模式');
+                    } else {
+                        console.log('动态创建的iframe是非标准的工作模式');
+                    }
+                }); 
+            }
+
+
+        </script>
+    </body>
+</html>

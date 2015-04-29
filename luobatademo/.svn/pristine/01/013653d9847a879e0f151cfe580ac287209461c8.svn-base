@@ -1,0 +1,8 @@
+匹配document.compatMode === 'CSS1Compat'的为标准模式，否则都为非标准模式。
+ifame内匹配iframe.contentWindow.document.compatMode === 'CSS1Compat'
+
+结论，不管是原页面还是页面内的iframe,浏览器的工作模式只和Doctype有关（不同的浏览器可能会有默认的Doctype）
+IE下，如果有meta标签强制渲染，如果渲染为IE6，则一定非标准，meta渲染为ie6以上（ie7 8）则无论doctype是什么，都为标准模式
+
+
+通过动态改变子iframe的doctype或者改变自己的doctype可以改变其浏览器运行模式（低版本ie需要真机测试，否则不准）。

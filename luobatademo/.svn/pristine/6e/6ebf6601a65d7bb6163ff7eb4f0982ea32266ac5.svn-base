@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<RepositoryCustomSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <LastUsedView>Log</LastUsedView>
+  <AutoRefresh>true</AutoRefresh>
+  <DraftCommitMsg />
+  <LogBranchFilterIndex>0</LogBranchFilterIndex>
+  <SidebarExpandedItems>
+    <string>文件状态</string>
+    <string>分支</string>
+    <string>远程</string>
+  </SidebarExpandedItems>
+  <SidebarWidth>140</SidebarWidth>
+  <AutoRefreshRemotes>true</AutoRefreshRemotes>
+  <LastCheckedRemotes>2015-04-18T21:09:10.4996326+08:00</LastCheckedRemotes>
+  <RemoteProjectLinks>
+    <RepositoryRemoteProjectLink>
+      <Type>GitHub</Type>
+      <BaseUrl>https://www.github.com</BaseUrl>
+      <RemoteName>github</RemoteName>
+      <Username>Luobata</Username>
+      <Identifier>Luobata/jQuery.luobata.barrage</Identifier>
+    </RepositoryRemoteProjectLink>
+  </RemoteProjectLinks>
+  <CommitTextLinks />
+  <SubtreeLinks />
+  <IncomingSavedCount>0</IncomingSavedCount>
+  <OutgoingSavedCount>0</OutgoingSavedCount>
+</RepositoryCustomSettings>

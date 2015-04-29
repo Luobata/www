@@ -1,0 +1,289 @@
+.center {
+    width: 1200px;
+    margin: 200px auto;
+}
+
+.center .home {
+    width: 100%;
+    height: 600px;
+}
+
+.center .home .bac-pic {
+    width: 630px;
+    margin: 0 auto;
+}
+
+.center .home .bac-pic .pic {
+    margin-left: -150px;
+    margin-top: -120px;
+}
+.center .home .bac-pic .clearfix{
+    float: left;
+    position: relative;
+}
+.center .home .bac-pic .clearfix .text{
+    position: absolute;
+    width: 300px;
+    right: 100px;
+    top: -26px;
+    font-family: helvetica;
+    color: #585855;
+    font-size: 17px;
+    text-align: right;
+}
+.center .home .bac-pic .clearfix .after{
+    top: 278px;
+    right: 152px;
+}
+.center .home .bac-pic .clearfix .text span{
+    display: block;
+
+}
+
+.center .nav{
+    width: 100%;
+}
+.center .nav ul{
+    width: 630px;
+    margin: 0 auto;
+}
+.center .nav li{
+    float: left;
+    height: 24px;
+    width: 25%;
+    /*margin-right: 100px;*/
+}
+.center .nav .last{
+    margin-right: 0px;
+}
+.center .nav .home{
+    background: url("../images/home.png") no-repeat;
+    /*width: 62px;*/
+}
+.center .nav .home a{
+    width: 62px;
+}
+.center .nav .resume{
+    background: url("../images/resume.png") no-repeat;
+    /*width: 96px;*/
+}
+.center .nav .resume a{
+    width: 96px;
+}
+.center .nav .project{
+    background: url("../images/project.png") no-repeat;
+    /*width: 114px;*/
+}
+.center .nav .project a{
+    width: 114px;
+}
+.center .nav .contact{
+    background: url("../images/contact.png") no-repeat;
+    /*width: 116px;*/
+}
+.center .nav .contact a{
+    width: 116px;
+}
+.center .nav li a {
+    font-size: 20px;
+    color: #585855;
+}
+.center .nav .selected{
+    display: block;
+    height: 24px;
+    border:1px #3186fd solid;
+    border-width: 0 0 3px 0;
+    padding-bottom: 8px;
+}
+
+.center .home .product{
+    width: 100%;
+}
+.center .home .product .list{
+    width: 300px;
+    margin: 0 50px;
+    float: left;
+    text-align: center;
+    position: relative;
+}
+.center .home .product .list .bac{
+    width: 300px;
+    height: 216px;
+    transition:all 1s linear;
+}
+.center .home .product .list .xqs{
+    background: url("../images/1.jpg") no-repeat 0 0px;
+}
+.center .home .product .list .baocoo{
+    background: url("../images/2.jpg") no-repeat 0 0px;
+}
+.center .home .product .list .lenovo{
+    background: url("../images/3.jpg") no-repeat 0 0px;
+}
+.center .home .product .list .chinamobile{
+    background: url("../images/4.jpg") no-repeat 0 0px;
+}
+.center .home .product .list .lockscreen{
+    background: url("../images/5.jpg") no-repeat 0 0px;
+}
+.center .home .product .list .kaoshen{
+    background: url("../images/6.jpg") no-repeat 0 0px;
+}
+.center .home .product .list:hover .bac{
+    background-position: 0 -216px;
+    /*animation:'fade' 10s ease-in-oput;*/
+    /*-webkit-animation-name:'fade';*/
+    /*-webkit-animation-duration: 1s;*/
+    /*-webkit-animation-timing-function: ease-in-out;*/
+}
+
+@-webkit-keyframes 'fade' {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0;
+        background-position: 0 -216px;
+    }
+    75% {
+        opacity: 0.5
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.center .home .product .list img{
+    width: 300px;
+    height: 216px;
+}
+.center .home .product .list a{
+    font-size: 16px;
+    color: #585855;
+}
+
+.center .resume{
+    width: 1000px;
+    margin: 0 auto;
+}
+.resume .txt{
+    font-size: 20px;
+    font-family: helvetica;
+    color: #8c8c8c;
+    display: block;
+    margin-bottom: 5px;
+}
+.resume .grey{
+    color: #666666;
+}
+.resume .resume-head{
+    width: 100%;
+    overflow: hidden;
+}
+.resume .resume-head .about{
+    float: left;
+
+}
+.resume .resume-head .about .name{
+    background: url('../images/resume_01.png') no-repeat;
+    width: 214px;
+    height: 44px;
+    display: block;
+}
+.resume .resume-head .about .inc{
+    background: url('../images/resume_04.png') no-repeat;
+    width: 298px;
+    height: 25px;
+    display: block;
+}
+.resume .resume-head .contact{
+    float: right;
+    margin-top: 8px;
+}
+.resume .resume-head .contact .tel{
+    margin-bottom: 12px;
+    background: url('../images/resume_02.png') no-repeat;
+    padding-left: 32px;
+    height: 23px;
+}
+.resume .resume-head .contact .mail{
+    background: url('../images/resume_03.png') no-repeat;
+    padding-left: 34px;
+    height: 23px;
+}
+.resume .education{
+    width: 100%;
+    margin-top: 20px;
+}
+.resume .education .title{
+    background: url('../images/resume_05.png') no-repeat 25px;
+    width: 180px;
+    height: 28px;
+    padding-top: 13px;
+}
+.resume .title:before{
+    content: "00";
+    background-color: #3186fd;
+    color: #3186fd;
+}
+.resume .grey{
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+.resume .experience{
+    width: 100%;
+    margin-top: 20px;
+}
+.resume .experience .title{
+    background: url('../images/resume_06.png') no-repeat 25px;
+    width: 280px;
+    height: 28px;
+    padding-top: 13px;
+}
+.resume .experience .grey{
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+.resume .experience .grey.sec{
+    margin-top: 16px;
+}
+.resume .skills{
+    width: 100%;
+    margin-top: 20px;
+}
+.resume .skills .title{
+    background: url('../images/resume_07.png') no-repeat 25px;
+    width: 180px;
+    height: 28px;
+    padding-top: 13px;
+}
+.resume .skills .skill ul{
+    width: 100%;
+}
+.resume .skills .skill ul li{
+    float: left;
+    width: 160px;
+    margin-right: 120px;
+    margin-bottom: 20px;
+}
+.resume .skills .skill ul li.last{
+    margin-right: 0;
+}
+.resume .skills .skill ul li .skill-name{
+}
+.resume .skills .skill ul li .progress{
+    width: 160px;
+    height: 16px;
+    background-color: #cccccc;
+    display: block;
+}
+.resume .skills .skill ul li .progress .num1{
+    width: 90%;
+    height: 16px;
+    background-color: #3186fd;
+    display: block;
+
+}

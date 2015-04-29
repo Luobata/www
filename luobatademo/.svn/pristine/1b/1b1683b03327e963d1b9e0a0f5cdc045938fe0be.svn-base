@@ -1,0 +1,154 @@
+.button{
+	width: 100px;
+	height: 80px;
+	margin: 10px auto;
+	background-color: #F06161;
+	position: relative;
+	display: block;
+	cursor: pointer;
+}
+.onediv{
+	width: 100px;
+	margin: 10px auto;
+	font-size: 36px;
+	text-align: center;
+	line-height: 80px;
+	background: url('../img/icon.png') center no-repeat;
+	background-color: #F06161;
+}
+.button .icon{
+	font-size: 14px;
+  	/*width: 100%;  
+  	height: 100%;*/
+  	line-height: 80px;
+  	margin: 0 auto;
+  	display: block;
+  	text-align: center;
+  	/*background: url('../img/icon.png') center no-repeat;*/
+  	/*margin: auto;*/
+  	/*position: absolute;*/
+  	/*top: 0;
+  	bottom: 0;
+  	left: 0;
+  	right: 0;  */
+}
+.button .img{
+	background: url('../img/icon.png') center no-repeat;
+	width: 100px;
+	height: 80px;
+	display: block;
+	margin: 0 auto;
+}
+.center{
+	margin: 10px auto;
+	text-align: center;
+	display: block;
+}
+.button2{
+ 	background-color: #F06161;
+ 	cursor: pointer;
+ 	display: inline-block;
+ 	*display:inline;
+ 	*zoom:1;
+}
+
+.button2 .txt{
+	line-height: 80px;
+	margin: 0 10px;
+}
+
+
+.button3{
+    background: url('../img/img.png') 0 100% repeat-x;
+    background-size: 100% 100%;
+	background-color: #F06161;
+	display: inline-block;
+	cursor: pointer;
+	*zoom:1;
+	*display: inline;
+	position: relative;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/img.png', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/img.png', sizingMethod='scale')";
+}
+.button3 .icon{
+	background: url('../img/icon.png') center no-repeat;
+	width: 40px;
+  	height: 80px;
+ 	display: block;
+ 	/*float: left;*/
+ 	position: absolute;
+ 	margin: 0 10px;
+}
+.button3 .txt{
+	line-height: 80px;
+	margin: 0 10px;
+}
+.left .icon{
+	left: 0px;
+	top: 0px;
+}
+.left .txt{
+	padding-left: 60px;
+}
+.right .icon{
+	right: 0px;
+	top: 0px;
+}
+.right .txt{
+	padding-right: 60px;
+}
+.speech-bubble {
+    position: relative;
+    background-color: #292929;
+ 
+    width: 200px;
+    height: 150px;
+    line-height: 150px; /* 垂直居中 */
+ 
+    color: white;
+    text-align: center;
+}
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+ 
+  width: 0;
+  height: 0;
+ 
+  border: 10px solid;
+  border-color: red green blue yellow;
+}
+.button3 .shugang{
+    border: solid #fff;
+    border-width:0 1px 0 0; 
+    height: 40px;
+    left: 60px;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+}
+.button3 .right{
+    right: 60px;
+}
+.button3 .icon_right{
+    right: 0px;
+    top: 0px;
+}
+.button3 .icon_left{
+    left: 0px;
+    top: 0px;
+}
+.button3 .txt_center{
+    padding-left: 60px;
+    padding-right: 60px;
+}
+.test{
+  width: 200px;
+  height: 100px;
+  border: 1px solid #22B234;
+  /*border:none;*/
+  filter:chroma(color=#000000);
+}
+.test.focus{
+  /*border:none;*/
+}

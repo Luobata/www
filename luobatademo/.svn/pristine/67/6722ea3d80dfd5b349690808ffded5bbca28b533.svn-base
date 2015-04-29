@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>浏览器工作模式</title>
+</head>
+
+<body>
+    <h1>在本页面中靠document.write来修改doctype之后的工作模式</h1>
+    <input type="button" value="点击修改页面doctype" id="button1">
+    <script type="text/javascript">
+    var btn1 = document.getElementById('button1');
+
+    console.log("未修改之前的工作模式"+document.compatMode);
+
+    if(window.addEventListener){
+        btn1.addEventListener('click', function() {
+            document.write('<!DOCTYOPE html>');
+            console.log("修改之后的工作模式"+document.compatMode);
+        });
+    } else {
+        btn1.attachEvent('click', function() {
+            document.write('<!DOCTYOPE html>');
+            console.log("修改之后的工作模式"+document.compatMode);
+        });
+    }
+    
+    </script>
+</body>
+
+</html>

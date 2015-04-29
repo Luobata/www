@@ -1,21 +1,30 @@
 .button{
 	width: 80px;
-	height: 34px;
+	height: 40px;
 	margin: 10px auto;
 	background-color: #F06161;
 	position: relative;
 	display: block;
 	cursor: pointer;
+  padding-left: 10px;
 }
-.button .icon{
+.button .icon,.button2 .icon,.button3 .icon{
   font-size: 12px;
-  line-height: 34px;
+  line-height: 40px;
   margin: 0 auto;
   display: block;
   text-align: center;
+  padding-right: 10px;
 }
 .shadow{
-  background: url('../img/img.png') 0 100% repeat-x;
+  background: url('../img/left.png') 0 100%;
+  padding-left: 10px;
+}
+.shadow .icon{
+  background: url('../img/right.png') 100%;
+  display: block;
+  padding-right: 10px;
+  line-height: 40px;
 }
 .button .img{
 	background: url('../img/icon.png') center no-repeat;
@@ -23,7 +32,7 @@
 	height: 16px;
 	display: block;
 	margin: 0 auto;
-  padding-top: 16px;
+  padding-top: 24px;
 }
 .center{
 	margin: 10px auto;
@@ -33,9 +42,11 @@
 .button2{
  	background-color: #F06161;
  	cursor: pointer;
+  padding-left: 10px;
  	display: inline-block;
  	*display:inline;
  	*zoom:1;
+  height: 40px;
 }
 
 .button2 .txt{
@@ -43,78 +54,53 @@
 	margin: 0 10px;
 }
 
-
 .button3{
-    background: url('../img/img.png') 0 100% repeat-x;
-    background-size: 100% 100%;
 	background-color: #F06161;
 	display: inline-block;
 	cursor: pointer;
 	*zoom:1;
 	*display: inline;
 	position: relative;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/img.png', sizingMethod='scale');
-    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/img.png', sizingMethod='scale')";
+  height: 40px;
 }
-.button3 .icon{
+.button3 .img{
 	background: url('../img/icon.png') center no-repeat;
-	width: 40px;
-  	height: 80px;
+	width: 16px;
+  height: 16px;
  	display: block;
- 	/*float: left;*/
  	position: absolute;
  	margin: 0 10px;
+  padding-top: 24px;
+  top: 0px;
 }
 .button3 .txt{
-	line-height: 80px;
+	line-height: 40px;
 	margin: 0 10px;
 }
-.left .icon{
-	left: 0px;
-	top: 0px;
+.left .img{
+  left: 0px;
 }
 .left .txt{
-	padding-left: 60px;
+	padding-left: 35px;
 }
-.right .icon{
+.right .img{
 	right: 0px;
 	top: 0px;
 }
 .right .txt{
-	padding-right: 60px;
-}
-.speech-bubble {
-    position: relative;
-    background-color: #292929;
- 
-    width: 200px;
-    height: 150px;
-    line-height: 150px; /* 垂直居中 */
- 
-    color: white;
-    text-align: center;
-}
-.speech-bubble:after {
-  content: '';
-  position: absolute;
- 
-  width: 0;
-  height: 0;
- 
-  border: 10px solid;
-  border-color: red green blue yellow;
+	padding-right: 20px;
 }
 .button3 .shugang{
     border: solid #fff;
     border-width:0 1px 0 0; 
-    height: 40px;
-    left: 60px;
+    height: 20px;
+    left: 35px;
     position: absolute;
     top: 50%;
-    margin-top: -20px;
+    margin-top: -10px;
 }
 .button3 .right{
-    right: 60px;
+    right: 35px;
 }
 .button3 .icon_right{
     right: 0px;
@@ -125,16 +111,425 @@
     top: 0px;
 }
 .button3 .txt_center{
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
-.test{
-  width: 200px;
-  height: 100px;
-  border: 1px solid #22B234;
-  /*border:none;*/
-  filter:chroma(color=#000000);
+
+#button1{
+  width: 80px;
+  height: 40px;
+  margin: 10px auto;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  padding-left: 10px;
+  background: url('../img/left.png') 0 100%;
+  color: #000;
 }
-.test.focus{
-  /*border:none;*/
+#button1-icon{
+  background: url('../img/right.png') 100%;
+  display: block;
+  padding-right: 10px;
+  line-height: 40px;
+  font-size: 12px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#button2{
+  width: 80px;
+  height: 40px;
+  margin: 10px auto;
+  background-color: #F06161;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  padding-left: 10px;
+  color: #000;
+  /*color: #555;
+background: #E6E6E6 url("../img/ui-bg_glass_75_e6e6e6_1x400.png") repeat-x scroll 50% 50%;
+border: 1px solid #D3D3D3;*/
+}
+#button2-icon{
+  font-size: 12px;
+  line-height: 40px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  padding-right: 10px;
+}
+
+#button3{
+  width: 32px;
+  height: 32px;
+  margin: 10px auto;
+  background-color: #D3D3D3;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  color: #000;
+}
+#button3-icon{
+  font-size: 12px;
+  line-height: 32px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  padding-right: 10px;
+}
+#button3-img{
+/*  background: url('../img/icon.png') center no-repeat;
+  width: 16px;
+  height: 16px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 24px;*/
+  background-image: url("../img/ui-icons_888888_256x240.png");
+  background-position: -208px -112px;
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+  margin-top: -8px;
+  left: 50%;
+  margin-left: -8px;
+}
+
+#button4{
+  background: url('../img/left.png') 0 100%;
+  padding-left: 10px;
+  width: 40px;
+  height: 40px;
+  margin: 10px auto;
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+#button4-icon{
+  background: url('../img/right.png') 100%;
+  display: block;
+  padding-right: 10px;
+  height: 40px;
+  font-size: 12px;
+  margin: 0 auto;
+  text-align: center;
+}
+#button4-img{
+  /*  background: url('../img/icon.png') center no-repeat;
+  width: 16px;
+  height: 16px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 24px;*/
+  background-image: url("../img/ui-icons_888888_256x240.png");
+  background-position: -208px -112px;
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+  margin-top: -8px;
+  left: 50%;
+  margin-left: -8px;
+}
+
+#button5{
+    background-color: #F06161;
+  cursor: pointer;
+  padding-left: 10px;
+  display: inline-block;
+  *zoom:1;
+  *display: inline;
+  height: 40px;
+}
+#button5-icon{
+  font-size: 12px;
+  line-height: 40px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  padding-right: 10px;
+}
+#button6{
+  background-color: #F06161;
+  cursor: pointer;
+  padding-left: 10px;
+  display: inline-block;
+  *zoom:1;
+  *display: inline;
+  height: 40px;
+  background: url('../img/left.png') 0 100%;
+}
+#button6-icon{
+  background: url('../img/right.png') 100%;
+  display: block;
+  padding-right: 10px;
+  line-height: 40px;
+  font-size: 12px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#button7{
+  background-color: #F0F0F0;
+  display: inline-block;
+  *zoom:1;
+  *display: inline;
+  cursor: pointer;
+  position: relative;
+  height: 30px;
+}
+#button7-icon{
+  font-size: 12px;
+  line-height: 30px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+#button7-img{
+  background-image: url("../img/ui-icons_888888_256x240.png");
+  background-position: -96px -128px;
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  margin: 0 5px;
+  top: 50%;
+  margin-top: -8px;
+  left: 0px;
+}
+#button7-txt{
+  padding-left: 16px;
+  line-height: 30px;
+  margin: 0 10px;
+}
+#button8{
+  background-color: #F06161;
+  display: inline-block;
+  *zoom:1;
+  *display: inline;
+  cursor: pointer;
+  position: relative;
+  height: 40px;
+  background: url('../img/left.png') 0 100%;
+  padding-left: 10px;
+  color:#fff;
+}
+#button8-icon{
+  background: url('../img/right.png') 100%;
+  display: block;
+  padding-right: 10px;
+  line-height: 40px;
+  font-size: 12px;
+  margin: 0 auto;
+  text-align: center;  
+}
+#button8-img{
+/*  background: url('../img/icon2.png') center no-repeat;
+  width: 12px;
+  height: 8px;
+  display: block;
+  position: absolute;
+  margin: 0 10px;
+  padding-top: 32px;
+  right: 0px;
+  top: 0px;  */
+  background-image: url("../img/ui-icons_888888_256x240.png");
+  background-position: -64px -16px;
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  margin: 0 auto;
+  right: 0px;
+  top: 50%;
+  margin-top: -8px;
+  margin-right: 8px;
+}
+#button8-txt{
+  padding-right: 10px;
+  line-height: 40px;
+  margin: 0 10px;
+  font-size: 13px;
+}
+
+#button9{
+  background-color: #F0F0F0;
+  display: inline-block;
+  *zoom:1;
+  *display: inline;
+  cursor: pointer;
+  position: relative;
+  height: 30px;
+}
+#button9-icon{
+  font-size: 12px;
+  line-height: 30px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+#button9-img{
+  background-image: url("../img/ui-icons_888888_256x240.png");
+  background-position: -64px -16px;
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  margin: 0 10px;
+  top: 50%;
+  margin-top: -8px;
+  left: 0px;
+}
+#button9-shugang{
+  border: solid #D3D3D3;
+  border-width: 0 1px 0 0;
+  height: 30px;
+  left: 35px;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+}
+#button9-txt{
+  padding-left: 35px;
+  line-height: 30px;
+  margin: 0 10px;
+}
+
+#button10{
+  background-color: #F06161;
+  display: inline-block;
+  *zoom:1;
+  *display: inline;
+  cursor: pointer;
+  position: relative;
+  height: 40px;
+  background: url('../img/left.png') 0 100%;
+  padding-left: 10px;
+}
+#button10-icon{
+  background: url('../img/right.png') 100%;
+  display: block;
+  padding-right: 10px;
+  line-height: 40px;
+  font-size: 12px;
+  margin: 0 auto;
+  text-align: center; 
+}
+#button10-img{
+  right: 0px;
+  top: 0px;
+  background: url('../img/icon2.png') center no-repeat;
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  margin: 0 10px;
+  padding-top: 24px;
+}
+#button10-shugang{
+  right: 30px;
+  border: solid #D3D3D3;
+  border-width: 0 1px 0 0;
+  height: 40px;
+  left: 35px;
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+}
+#button10-txt{
+  padding-right: 20px;
+  line-height: 40px;
+  margin: 0 10px;
+}
+
+#button11{
+  background-color: #F06161;
+  display: inline-block;
+  *zoom:1;
+  *display: inline;
+  cursor: pointer;
+  position: relative;
+  height: 40px;
+  background: url('../img/left.png') 0 100%;
+  padding-left: 10px;
+}
+#button11-icon{
+  background: url('../img/right.png') 100%;
+  display: block;
+  padding-right: 10px;
+  line-height: 40px;
+  font-size: 12px;
+  margin: 0 auto;
+  text-align: center; 
+}
+#button11-img-left{
+/*  left: 0px;
+  top: 0px;
+  background: url('../img/icon.png') center no-repeat;
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  margin: 0 10px;
+  padding-top: 24px;*/
+  background-image: url("../img/ui-icons_888888_256x240.png");
+  background-position: -96px -128px;
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  margin: 0 5px;
+  top: 50%;
+  margin-top: -8px;
+  left: 50%;
+  margin-left: -8px;
+}
+#button11-shugang-left{
+  border: solid #fff;
+  border-width: 0 1px 0 0;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+}
+#button11-txt{
+  padding-left: 30px;
+  padding-right: 30px;
+  line-height: 40px;
+  margin: 0 10px;
+}
+#button11-shugang-right{
+  border: solid #fff;
+  border-width: 0 0 0 1px;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -10px;
+}
+#button11-img-right{
+/*  right: 0px;
+  top: 0px;
+  background: url('../img/icon.png') center no-repeat;
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  margin: 0 10px;
+  padding-top: 24px;*/
+  background-image: url("../img/ui-icons_888888_256x240.png");
+  background-position: -96px -128px;
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  margin: 0 5px;
+  top: 50%;
+  margin-top: -8px;
 }

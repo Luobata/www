@@ -1,0 +1,116 @@
+.button{
+	width: 80px;
+	height: 40px;
+	margin: 10px auto;
+	background-color: #F06161;
+	position: relative;
+	display: block;
+	cursor: pointer;
+  padding-left: 10px;
+}
+.button .icon,.button2 .icon,.button3 .icon{
+  font-size: 12px;
+  line-height: 40px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  padding-right: 10px;
+}
+.shadow{
+  background: url('../img/left.png') 0 100%;
+  padding-left: 10px;
+}
+.shadow .icon{
+  background: url('../img/right.png') 100%;
+  display: block;
+  padding-right: 10px;
+  line-height: 40px;
+}
+.button .img{
+	background: url('../img/icon.png') center no-repeat;
+	width: 16px;
+	height: 16px;
+	display: block;
+	margin: 0 auto;
+  padding-top: 24px;
+}
+.center{
+	margin: 10px auto;
+	text-align: center;
+	display: block;
+}
+.button2{
+ 	background-color: #F06161;
+ 	cursor: pointer;
+  padding-left: 10px;
+ 	display: inline-block;
+ 	*display:inline;
+ 	*zoom:1;
+  height: 40px;
+}
+
+.button2 .txt{
+	line-height: 34px;
+	margin: 0 10px;
+}
+
+.button3{
+	background-color: #F06161;
+	display: inline-block;
+	cursor: pointer;
+	*zoom:1;
+	*display: inline;
+	position: relative;
+  height: 40px;
+}
+.button3 .img{
+	background: url('../img/icon.png') center no-repeat;
+	width: 16px;
+  height: 16px;
+ 	display: block;
+ 	position: absolute;
+ 	margin: 0 10px;
+  padding-top: 24px;
+  top: 0px;
+}
+.button3 .txt{
+	line-height: 40px;
+	margin: 0 10px;
+}
+.left .img{
+  left: 0px;
+}
+.left .txt{
+	padding-left: 35px;
+}
+.right .img{
+	right: 0px;
+	top: 0px;
+}
+.right .txt{
+	padding-right: 20px;
+}
+.button3 .shugang{
+    border: solid #fff;
+    border-width:0 1px 0 0; 
+    height: 20px;
+    left: 35px;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+}
+.button3 .right{
+    right: 35px;
+}
+.button3 .icon_right{
+    right: 0px;
+    top: 0px;
+}
+.button3 .icon_left{
+    left: 0px;
+    top: 0px;
+}
+.button3 .txt_center{
+    padding-left: 30px;
+    padding-right: 30px;
+}

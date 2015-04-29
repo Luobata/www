@@ -1,0 +1,137 @@
+ie8,ie89;
+button {
+    background-color: #F0F0F0;
+    border-width: 3px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 10pt;
+    overflow: hidden;
+    padding: 1px 8px;
+    text-align: center;
+    zoom: 1;
+}
+col {
+    box-sizing: border-box;
+    display: table-column;
+}
+
+colgroup {
+    box-sizing: border-box;
+    display: table-column-group;
+}
+select {
+    background-color: #FFF;
+    border-width: 1px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 10pt;
+    overflow: hidden;
+    zoom: 1;
+}
+table {
+    border-color: #F0F0F0;
+    border-spacing: 2px 2px;
+    box-sizing: border-box;
+    display: table;
+    zoom: 1;
+}
+
+tbody {
+    box-sizing: border-box;
+    display: table-row-group;
+    vertical-align: middle;
+}
+tfoot {
+    box-sizing: border-box;
+    display: table-footer-group;
+    vertical-align: middle;
+}
+thead {
+    box-sizing: border-box;
+    display: table-header-group;
+    vertical-align: middle;
+}
+
+tr {
+    box-sizing: border-box;
+    display: table-row;
+    vertical-align: middle;
+    zoom: 1;
+}
+webkit:
+input[type="search"] {
+    -webkit-appearance: searchfield;
+    -webkit-box-sizing: border-box;
+}
+input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button {
+    -webkit-box-align: center;
+    text-align: center;
+    cursor: default;
+    color: ButtonText;
+    padding: 2px 6px 3px 6px;
+    border: 2px outset ButtonFace;
+    background-color: ButtonFace;
+    -webkit-box-sizing: border-box
+}
+input[type="checkbox"] {
+    -webkit-appearance: checkbox;
+    -webkit-box-sizing: border-box;
+}
+
+input[type="radio"] {
+    -webkit-appearance: radio;
+    -webkit-box-sizing: border-box;
+}
+
+keygen, select {
+    -webkit-appearance: menulist;
+    -webkit-box-sizing: border-box;
+    -webkit-box-align: center;
+    border: 1px solid;
+    -webkit-border-radius: 5px;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    color: black;
+    background-color: white;
+    cursor: default;
+}
+datagrid {
+    height: 150px; /* We don't use width:300px in CSS, since we want width:intrinsic and width:min-intrinsic to reset to 300 properly. */
+    -webkit-appearance: datagrid;
+    -webkit-box-sizing: border-box;
+    -webkit-rtl-ordering: logical;
+    color: black;
+    background-color: white;
+    cursor: default;
+    border: 1px inset gray;
+    white-space: initial;
+}
+
+FF:
+table {
+  display: table;
+  border-spacing: 2px;
+  border-collapse: separate;
+  margin-top: 0;
+  margin-bottom: 0;
+  /* XXXldb do we want this if we're border-collapse:collapse ? */
+  -moz-box-sizing: border-box;
+  text-indent: 0;
+}
+caption {
+  display: table-caption;
+  text-align: center;
+  -moz-box-sizing: border-box;
+}
+hr {
+  display: block;
+  height: 2px;
+  border: 1px inset;
+  margin: 0.5em auto 0.5em auto;
+  color: gray;
+  -moz-float-edge: margin-box;
+  -moz-box-sizing: border-box;
+}
+
+
+

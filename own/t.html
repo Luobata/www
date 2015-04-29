@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+.box{width:512px; height:512px; margin-left:auto; margin-right:auto; background:url(/study/image/loading.gif) no-repeat center; text-align:center; overflow:hidden; position:relative;}
+.box img{vertical-align:middle;}
+.vline{display:inline-block; height:100%; width:0; vertical-align:middle;}
+.prev, .next{width:50%; _height:2000px; background-image:url(about:blank); position:absolute; top:0; bottom:0; outline:none;}
+.prev{cursor:url(pic_prev.cur), auto; left:0;}
+.next{cursor:url(pic_next.cur), auto; right:0;}
+
+.random{display:block; width:120px; height:36px; margin-left:auto; margin-right:auto;}
+</style>
+<body>
+    <div id="box" class="box">
+        <s class="prev" title="这是第一张图片"></s>
+        <s class="next" title="下一张"></s>
+        <img src="http://image.zhangxinxu.com/image/study/s/s512/mm1.jpg" /><i class="vline"></i>
+    </div>
+    <script type="text/javascript">
+        // 鼠标抬起，如果有右键动作，当前元素隐藏再显示，为contextmenu事件触发铺路
+        var eleBox = document.getElementById("box"),
+        eleLink = eleBox.getElementsByTagName("s");
+        for (var i = 0; i < 1; i++) {
+            eleLink[i].oncontextmenu = function(event) {
+                event = event || window.event;
+                // return false;
+                var target = this;
+                // if (/^2|6|4|7$/.test(event.button)) {
+                    target.style.visibility = "hidden";
+                    // target.style.display = "none"; 
+                    setTimeout(function() { target.style.visibility = "visible";}, 16);            
+                // }        
+            };
+        };
+
+    </script>
+</body>
+
+</html>
